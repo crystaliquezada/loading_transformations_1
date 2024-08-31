@@ -1,0 +1,33 @@
+---
+title: "The Lasting Legacy of Redlining"
+author: "Ryan Best, Elena Mejía"
+date: "2024-08-30"
+output: html_document
+---
+
+# Overview
+- [The Lasting Legacy of Redlining](https://projects.fivethirtyeight.com/redlining/) explores the discriminatory practice of redlining in an analysis of the racial segregation within 138 metropolitan cities. Ultimately, redlining has led to economic disparities and unequal opportunities for people of color to create generational wealth. As of 2020, Best and Mejia concluded that neighborhoods deemed "Hazardous", or redlined zones, are *still* predominately inhabited by Black, Latino, and Asian groups, while "Best", or A-rated neighborhoods remain mostly White. Despite this practice being introduced by the HOLC in the 1930s, minority groups' housing, educational opportunities, healthcare access, and risk of climate change are all negatively impacted today.
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir = "/Users/crys/loading_transformations_1")
+library(tidyverse)
+```
+
+# Redlining Scores by Racial/Ethnic Group
+### The following table presents the best (A) and worst (D) HOLC grade of cities with total populations over 100,000 by racial/ethnic groups. 
+
+```{r first chunk, eval=TRUE}
+#load data
+metro_grades <- read_csv("https://github.com/crystaliquezada/loading_transformations_1/raw/main/metro-grades.csv", show_col_types = FALSE)
+
+#filter and rename columns
+metro_grades %>% 
+  select(City = metro_area, Grade = holc_grade, Population = total_pop, White_Pct = pct_white, Black_Pct = pct_black, Hispanic_Pct = pct_hisp, Asian_Pct = pct_asian) %>% 
+  filter(Population > 100000, Grade == "A" | Grade == "D")
+```
+# Conclusion
+- In cities with a population over 100,000 we see that two of 138 cities have an A rating with residents being primarily White. On the other hand, most redlined cities — generally considered "undesirable" areas to live in — have a higher concentration of Black and Latino groups. Still, areas like Seattle and Indianapolis are predominately White people, despite a D rating, briefly explained as possible gentrification. For a more thorough understanding of cities like these, it is necessary to understand the geography of jobs and regional planning to explain the drive back to "hazardous" areas.
+
+[GitHub](https://github.com/crystaliquezada/loading_transformations_1)
