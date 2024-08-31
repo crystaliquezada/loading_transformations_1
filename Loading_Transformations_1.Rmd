@@ -31,3 +31,4 @@ metro_grades %>%
 - In cities with a population over 100,000 we see that two of 138 cities have an A rating with residents being primarily White. On the other hand, most redlined cities — generally considered "undesirable" areas to live in — have a higher concentration of Black and Latino groups. Still, areas like Seattle and Indianapolis are predominately White people, despite a D rating, briefly explained as possible gentrification. For a more thorough understanding of cities like these, it is necessary to understand the geography of jobs and regional planning to explain the drive back to "hazardous" areas.
 
 [GitHub](https://github.com/crystaliquezada/loading_transformations_1)
+[RPubs](https://rpubs.com/crystaliquezada/Loading_Transformations_1)
